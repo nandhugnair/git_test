@@ -21,6 +21,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: "Publish artifacts"
     inputs:
-      pathtoPublish: manifests
+      pathtoPublish: docker-demo/manifests
       artifactName: "manifests"
       publishLocation: "Container"
