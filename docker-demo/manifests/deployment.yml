@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: search
-          image: https://hub.docker.com/repository/docker/gnair123/demo_repo123:v1
+          image: https://hub.docker.com/repository/docker/gnair123/demo_repo123:#{Build.BuildId}#
           ports:
             - containerPort: 80
               name: http
