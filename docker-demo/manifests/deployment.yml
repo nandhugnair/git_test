@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: search
-          image: gnair123/demo_repo123
+          image: https://hub.docker.com/repository/docker/gnair123/demo_repo123
           ports:
             - containerPort: 80
               name: http
