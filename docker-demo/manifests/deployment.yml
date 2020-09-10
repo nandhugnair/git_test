@@ -15,7 +15,7 @@ spec:
         app: docker-demo
     spec:
       containers:
-        - name: search
+        - name: docker-demo
           image: https://hub.docker.com/repository/docker/gnair123/demo_repo123:#{Build.BuildId}#
           ports:
             - containerPort: 80
