@@ -17,6 +17,7 @@ spec:
       containers:
         - name: docker-demo
           image: gnair123/demo_repo123:#{Build.BuildId}#
+          imagePullSecrets: doc-kub-sec
           ports:
             - containerPort: 80
               name: http
