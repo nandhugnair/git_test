@@ -32,6 +32,6 @@ spec:
   selector:
     app: docker-demo
   ports:
-    - nodePort: 30163
-      port: 8080 
+    - protocol: TCP
+      port: 8080
       targetPort: 80
