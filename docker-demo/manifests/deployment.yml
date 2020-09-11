@@ -29,7 +29,6 @@ metadata:
   name: docker-demo-service
 spec:
   type: LoadBalancer
-  externalTrafficPolicy: Local
   ports:
   - port: 8080
     targetPort: 80
