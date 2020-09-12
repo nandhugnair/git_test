@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: docker-demo
-  namespace: example
+  namespace: default
   labels:
     app: docker-demo
 spec:
