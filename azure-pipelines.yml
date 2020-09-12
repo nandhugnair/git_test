@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  displayName: 'Run a one-line script again'
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
@@ -21,6 +21,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: "Publish artifacts"
     inputs:
-      pathtoPublish: manifests
+      pathtoPublish: docker-demo/manifests
       artifactName: "manifests"
       publishLocation: "Container"
