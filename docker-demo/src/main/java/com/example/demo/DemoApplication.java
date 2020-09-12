@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 	public static void main(final String[] args) {
 		final ConfigurableApplicationContext configurableApplicationContext = SpringApplication
-				.run(SpringMain.class, args);
+				.run(DemoApplication.class, args);
 		
 		 
 	}
