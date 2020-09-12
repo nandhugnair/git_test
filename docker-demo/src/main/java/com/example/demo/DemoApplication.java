@@ -5,9 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class DemoApplication {
-
-	public static void main(String[] args) {
-		System.out.println("Hi Nandhu!");
+	public static void main(final String[] args) {
+		final ConfigurableApplicationContext configurableApplicationContext = SpringApplication
+				.run(SpringMain.class, args);
+		
+		 
 	}
-
+	
+ 
 }
