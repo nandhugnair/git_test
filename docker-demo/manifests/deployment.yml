@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: docker-demo
+  namespace: example
   labels:
     app: docker-demo
 spec:
@@ -18,7 +19,8 @@ spec:
         - name: docker-demo
           image: gnair123/demo_repo123:#{Build.BuildId}#
           ports:
-            - containerPort: 80
+            - containerPort: 3000
               name: http
+              protocol: TCP
       imagePullSecrets:
         - name: doc-kub-sec
