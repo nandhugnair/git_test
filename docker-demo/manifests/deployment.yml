@@ -24,3 +24,15 @@ spec:
               protocol: TCP
       imagePullSecrets:
         - name: doc-kub-sec
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 8080
+  selector:
+    app: docker-demo
