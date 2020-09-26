@@ -30,7 +30,7 @@ private final static String BOOTSTRAP_SERVERS = "localhost:9093, localhost:9094,
         return new KafkaProducer<String, String>(propsClickStream);
     }
     
-    public static void main(String[] args) throws InterruptedException, FileNotFoundException
+    public static void main(String[] args) throws InterruptedException, FileNotFoundException, ExecutionException
     {
     
         final KafkaProducer<String, String> clickStreamProducer = createProducer();
@@ -52,7 +52,7 @@ private final static String BOOTSTRAP_SERVERS = "localhost:9093, localhost:9094,
             final ProducerRecord<String, String> record = new ProducerRecord<String, String>(
                     args[1], columns[0], Record);
             
-            clickStreamProducer.send(record);
+            clickStreamProducer.send(record).get();
                         
     }
         System.out.println("Completed producing records");
