@@ -10,15 +10,14 @@ import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 public class Producer {
 //List of brokers in Kafka cluster
-private final static String BOOTSTRAP_SERVERS = "localhost:9093, localhost:9094, localhost:9095";
+private final static String BOOTSTRAP_SERVERS = "52.188.145.209:9092, 52.255.141.107:9092";
     
     //Method to create producer object
     private static KafkaProducer<String, String> createProducer()
     {
         //Create Configuration properties object.
         Properties propsClickStream = new Properties();
-        
-        //Kafka broker topic details.
+       	   //Kafka broker topic details.
         propsClickStream.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);
         
         propsClickStream.put(ProducerConfig.CLIENT_ID_CONFIG, "ClickStreamProducer");
@@ -30,7 +29,7 @@ private final static String BOOTSTRAP_SERVERS = "localhost:9093, localhost:9094,
         return new KafkaProducer<String, String>(propsClickStream);
     }
     
-    public static void main(String[] args) throws InterruptedException, FileNotFoundException
+    public static void main(String[] args) throws InterruptedException, FileNotFoundException, ExecutionException
     {
     
         final KafkaProducer<String, String> clickStreamProducer = createProducer();
@@ -52,7 +51,7 @@ private final static String BOOTSTRAP_SERVERS = "localhost:9093, localhost:9094,
             final ProducerRecord<String, String> record = new ProducerRecord<String, String>(
                     args[1], columns[0], Record);
             
-            clickStreamProducer.send(record);
+            clickStreamProducer.send(record).get();
                         
     }
         System.out.println("Completed producing records");

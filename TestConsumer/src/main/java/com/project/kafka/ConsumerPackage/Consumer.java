@@ -10,7 +10,7 @@ import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.common.serialization.LongDeserializer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 public class Consumer {
-    private final static String BOOTSTRAP_SERVERS = "localhost:9093, localhost:9094, localhost:9095";
+    private final static String BOOTSTRAP_SERVERS = "52.188.145.209:9092, 52.255.141.107:9092";
     private static KafkaConsumer<String, String> createConsumer()
         {
             final Properties consumerProps = new Properties();
@@ -26,7 +26,7 @@ public class Consumer {
             
                         
             // Subscribe to the specified topic.                
-           ClickStreamConsumer.subscribe(Arrays.asList("clustertest"));
+           ClickStreamConsumer.subscribe(Arrays.asList("tellmewhy"));
                     
             return ClickStreamConsumer;
         }
